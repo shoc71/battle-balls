@@ -1,0 +1,10 @@
+html, body {
+    background-color: black;
+    color: white;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+canvas {
+    display: flex;
+}
