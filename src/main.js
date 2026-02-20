@@ -1,5 +1,6 @@
-import { Boundary} from "./boundary.js";
+import { Boundary } from "./boundary.js";
 import { Ball } from "./ball.js";
+import { resolveBallCollision } from "./collision.js";
 
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
@@ -28,7 +29,7 @@ var ball1 = new Ball(context, boundary, {
     radius: 35,
     ballColor: "red",
     numberColor: "white",
-    numberFont: '20px Arial',
+    numberFont: "20px Arial",
     health: 100,
     velocityX: 3,
     velocityY: -2,
@@ -40,11 +41,15 @@ var ball2 = new Ball(context, boundary, {
     radius: 35,
     ballColor: "#00c900ff",
     numberColor: "white",
-    numberFont: '20px Arial',
+    numberFont: "20px Arial",
     health: 100,
     velocityX: 3,
     velocityY: 2,
 })
+
+function ballCollision() {
+
+}
 
 function animate() {
 
@@ -54,7 +59,9 @@ function animate() {
     ball1.draw();
     ball2.draw();
 
-    requestAnimationFrame(animate)
+
+
+    requestAnimationFrame(animate);
 }
 
 window.addEventListener("resize", resizeCanvas());

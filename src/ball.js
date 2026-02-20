@@ -20,15 +20,19 @@ export class Ball {
         
     }
 
-    update() {
-        this.ballX += this.velocityX
-        this.ballY += this.velocityY
+    update(dt) {
+        this.ballX += this.velocityX * dt;
+        this.ballY += this.velocityY * dt;
 
         this.checkBorderCollision();
     }
 
     takeDamage(amount) {
         this.health -= amount;
+    }
+
+    isAlive() {
+        return this.health > 0;
     }
 
     checkBorderCollision() {
